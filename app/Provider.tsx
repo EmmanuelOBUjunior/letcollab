@@ -4,7 +4,8 @@ import {
     RoomProvider,
     ClientSideSuspense,
   } from "@liveblocks/react/suspense";
-const Provider = () => {
+import { ReactNode } from "react";
+const Provider = ({children}:{children:ReactNode}) => {
   return (
     <LiveblocksProvider publicApiKey={"pk_dev_PygIWMLt2YiQ5Nn_dqvIMlCw4ZPtcFCtSRbjQLcyYfZInhEQ9LxnMfRsWIZqi5v2"}>
     <RoomProvider id="my-room">
