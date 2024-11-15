@@ -1,9 +1,9 @@
 
 const SignInPage = () => {
   return (
-    <div>
+    <main>
       
-    </div>
+    </main>
   )
 }
 
