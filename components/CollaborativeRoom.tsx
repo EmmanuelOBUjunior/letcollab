@@ -6,24 +6,23 @@ import { Editor } from "@/components/editor/Editor";
 import Header from "@/components/Header";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 
-
 const CollaborativeRoom = () => {
   return (
     <RoomProvider id="my-room">
       <ClientSideSuspense fallback={<Loader />}>
         <div className="collaborative-room">
-        <Header>
-        <div className="flex w-fit items-center justify-center gap-2">
-          <p className="document-title">Document title goes here</p>
-        </div>
-        <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-      </Header>
-      <Editor />
+          <Header>
+            <div className="flex w-fit items-center justify-center gap-2">
+              <p className="document-title">Document title goes here</p>
+            </div>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </Header>
+          <Editor />
         </div>
       </ClientSideSuspense>
     </RoomProvider>
