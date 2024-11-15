@@ -7,7 +7,7 @@ import {
 import { ReactNode } from "react";
 const Provider = ({children}:{children:ReactNode}) => {
   return (
-    <LiveblocksProvider publicApiKey={"pk_dev_PygIWMLt2YiQ5Nn_dqvIMlCw4ZPtcFCtSRbjQLcyYfZInhEQ9LxnMfRsWIZqi5v2"}>
+    <LiveblocksProvider authEndpoint={'/api/liveblock-auth'}>
       <ClientSideSuspense fallback={<div>Loading…</div>}>
         {children}
       </ClientSideSuspense>
