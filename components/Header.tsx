@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const Header = () => {
+const Header = ({children}: HeaderProps) => {
   return (
     <div className="header">
       <Link href='/'>
@@ -20,6 +20,7 @@ const Header = () => {
       height={32}
       />
       </Link>
+      {children}
     </div>
   )
 }
