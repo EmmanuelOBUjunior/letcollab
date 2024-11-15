@@ -15,7 +15,7 @@ const Header = () => {
       <Image
       alt="Logo with name"
       src='/assets/icons/logo-icon.svg'
-      className="hidden md:block"
+      className="mr-2 md:hidden"
       width={120}
       height={32}
       />
