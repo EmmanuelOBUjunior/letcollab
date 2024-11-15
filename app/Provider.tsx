@@ -2,7 +2,6 @@
 import Loader from "@/components/Loader";
 import {
   LiveblocksProvider,
-  RoomProvider,
   ClientSideSuspense,
 } from "@liveblocks/react/suspense";
 import { ReactNode } from "react";
