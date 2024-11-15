@@ -1,7 +1,6 @@
 import { Editor } from "@/components/editor/Editor"
 import Header from "@/components/Header"
-import { SignedIn, UserButton } from "@clerk/clerk-react"
-import { SignedOut, SignInButton } from "@clerk/nextjs"
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs"
 
 const Document = () => {
   return (
