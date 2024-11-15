@@ -1,9 +1,15 @@
+'use client'
+
+import { ClientSideSuspense, RoomProvider } from "@liveblocks/react/suspense"
+import Loader from "./Loader"
 
 const CollaborativeRoom = () => {
   return (
-    <div>
-      
-    </div>
+    <RoomProvider id="my-room">
+        <ClientSideSuspense fallback={<Loader/>}>
+          <div className="collaborative-room"></div>
+        </ClientSideSuspense>
+      </RoomProvider>
   )
 }
 
