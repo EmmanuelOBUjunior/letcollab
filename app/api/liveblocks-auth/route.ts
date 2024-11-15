@@ -1,6 +1,5 @@
 import { liveblocks } from "@/lib/liveblocks";
 import { currentUser } from "@clerk/nextjs/server";
-import { Liveblocks } from "@liveblocks/node";
 import { redirect } from "next/navigation";
 
 
