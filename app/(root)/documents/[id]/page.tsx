@@ -1,6 +1,6 @@
-import { Editor } from "@/components/editor/Editor"
-import Header from "@/components/Header"
-import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs"
+import { Editor } from "@/components/editor/Editor";
+import Header from "@/components/Header";
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 
 const Document = () => {
   return (
@@ -10,15 +10,15 @@ const Document = () => {
           <p className="document-title">Document title goes here</p>
         </div>
         <SignedOut>
-          <SignInButton/>
+          <SignInButton />
         </SignedOut>
         <SignedIn>
-          <UserButton/>
+          <UserButton />
         </SignedIn>
       </Header>
-      <Editor/>
+      <Editor />
     </div>
-  )
-}
+  );
+};
 
-export default Document
+export default Document;
