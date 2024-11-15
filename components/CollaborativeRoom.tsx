@@ -1,5 +1,5 @@
 
-const CollaborateRoom = () => {
+const CollaborativeRoom = () => {
   return (
     <div>
       
@@ -7,4 +7,4 @@ const CollaborateRoom = () => {
   )
 }
 
-export default CollaborateRoom
+export default CollaborativeRoom
