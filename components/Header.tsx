@@ -12,6 +12,13 @@ const Header = () => {
       width={120}
       height={32}
       />
+      <Image
+      alt="Logo with name"
+      src='/assets/icons/logo-icon.svg'
+      className="hidden md:block"
+      width={120}
+      height={32}
+      />
       </Link>
     </div>
   )
