@@ -1,7 +1,7 @@
 
 const SignInPage = () => {
   return (
-    <main>
+    <main className="auth-page">
       
     </main>
   )
