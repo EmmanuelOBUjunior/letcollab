@@ -1,19 +1,17 @@
-'use client'
+"use client";
 import Loader from "@/components/Loader";
 import {
-    LiveblocksProvider,
-    RoomProvider,
-    ClientSideSuspense,
-  } from "@liveblocks/react/suspense";
+  LiveblocksProvider,
+  RoomProvider,
+  ClientSideSuspense,
+} from "@liveblocks/react/suspense";
 import { ReactNode } from "react";
-const Provider = ({children}:{children:ReactNode}) => {
+const Provider = ({ children }: { children: ReactNode }) => {
   return (
-    <LiveblocksProvider authEndpoint={'/api/liveblock-auth'}>
-      <ClientSideSuspense fallback={<Loader/>}>
-        {children}
-      </ClientSideSuspense>
-  </LiveblocksProvider>
-  )
-}
+    <LiveblocksProvider authEndpoint={"/api/liveblock-auth"}>
+      <ClientSideSuspense fallback={<Loader />}>{children}</ClientSideSuspense>
+    </LiveblocksProvider>
+  );
+};
 
-export default Provider 
+export default Provider;
