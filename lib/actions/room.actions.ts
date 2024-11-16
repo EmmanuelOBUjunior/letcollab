@@ -90,6 +90,11 @@ export const updateDocumentAccess = async ({
       [email]: getAccessType(userType) as AccessType,
     };
     const room = await liveblocks.updateRoom(roomId, { usersAccesses });
+
+    if(room){
+      //TODO: Send a notification to the invited user
+    }
+
     revalidatePath(`/documents/${roomId}`);
     return parseStringify(room);
   } catch (error) {
