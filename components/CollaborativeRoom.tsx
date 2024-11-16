@@ -64,6 +64,7 @@ const CollaborativeRoom = ({
               {currentUserType !== 'editor' && !editing && (
                 <p className="view-only-tag">View only</p>
               )}
+              {loading && <p className="text-sm text-gray-400">saving...</p>}
             </div>
             <div className="flex w-fit items-center justify-center gap-2">
               <ActiveCollaborators />
