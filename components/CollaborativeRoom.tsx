@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import ActiveCollaborators from "./ActiveCollaborators";
 import { useRef, useState } from "react";
+import { Input } from "./ui/input";
 
 const CollaborativeRoom = ({ roomId, roomMetadata}: CollaborativeRoomProps) => {
   const [documentTitle, setDocumentTitle] = useState(roomMetadata.title)
