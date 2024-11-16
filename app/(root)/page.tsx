@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import { Button } from '@/components/ui/button'
+import { SignedIn, UserButton, UserProfile } from '@clerk/nextjs'
 import React from 'react'
 
 const Home = () => {
@@ -8,6 +9,9 @@ const Home = () => {
       <Header className='sticky left-0 top-0'>
         <div className='flex items-center gap-2 lg:gap-2'>
           Notifications
+          <SignedIn>
+            <UserButton/>
+          </SignedIn>
         </div>
       </Header>
     </main>
