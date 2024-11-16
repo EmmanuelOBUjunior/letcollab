@@ -58,7 +58,7 @@ const ShareModal = ({
         </Label>
         <div className="flex items-center gap-3">
           <div className="flex flex-1 rounded-md bg-dark-400">
-            <Input id="email" placeholder="Enter email address" value={email} />
+            <Input id="email" placeholder="Enter email address" value={email} onChange={(e)=> setEmail(e.target.value)}/>
           </div>
         </div>
       </DialogContent>
