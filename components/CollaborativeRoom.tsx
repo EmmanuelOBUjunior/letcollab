@@ -31,11 +31,14 @@ const CollaborativeRoom = ({
         !containerRef.current.contains(e.target as Node)
       )
         setEditing(false);
+        updateDocument(roomId, documentTitle)
     };
 
     document.addEventListener("mousedown", handleClickOutside);
 
-    return () => {document.removeEventListener("mousedown", handleClickOutside);}
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   useEffect(() => {
