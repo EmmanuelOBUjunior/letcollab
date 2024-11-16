@@ -1,9 +1,9 @@
 
 const ActiveCollaborators = () => {
   return (
-    <div>
+    <ul>
       
-    </div>
+    </ul>
   )
 }
 
