@@ -2,9 +2,16 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
+import { createDocument } from "@/lib/actions/room.actions";
 
 const AddDocumentBtn = ({ userId, email }: AddDocumentBtnProps) => {
-  const addDocumentHandler = async() => {};
+  const addDocumentHandler = async() => {
+    try {
+        const room = createDocument({userId, email})
+    } catch (error) {
+        console.log("Could not create a blank document", error)
+    }
+  };
   return (
     <Button
       type="submit"
