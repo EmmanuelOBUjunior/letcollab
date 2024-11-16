@@ -1,6 +1,7 @@
 import AddDocumentBtn from "@/components/AddDocumentBtn";
 import Header from "@/components/Header";
 import { getDocuments } from "@/lib/actions/room.actions";
+import { dateConverter } from "@/lib/utils";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
@@ -38,7 +39,8 @@ const Home = async () => {
                         <Image src='/assets/icons/doc.svg' width={40} height={40} alt="file"/>
                       </div>
                       <div className="space-y-1">
-                        <p>{metadata.title}</p>
+                        <p className="line-clamp-1 text-lg">{metadata.title}</p>
+                        <p className="text-sm font-light text-blue-100">Created about {dateConverter(createdAt)}</p>
                       </div>
                     </Link>
                   </li>
