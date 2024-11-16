@@ -67,10 +67,10 @@ const ShareModal = ({
               className="share-input"
             />
             <UserTypeSelector userType={userType} setUserType={setUserType} />
-            <Button type = 'submit' onClick={shareDocumentHandler} className="gradient-blue flex h-full gap-1 px-5">
+          </div>
+            <Button type = 'submit' onClick={shareDocumentHandler} className="gradient-blue flex h-full gap-1 px-5" disabled={loading}>
                 {loading ? 'Sending...' : 'Invite'}
             </Button>
-          </div>
         </div>
       </DialogContent>
     </Dialog>
