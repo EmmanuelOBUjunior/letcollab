@@ -5,13 +5,13 @@ import { redirect } from "next/navigation";
 
 const Document = async ({ params: { id } }: SearchParamProps) => {
   const clerkUser = await currentUser();
-  if(!clerkUser) redirect('/sign-in');
+  if (!clerkUser) redirect("/sign-in");
 
   const room = await getDocument({
     roomId: id,
     userId: clerkUser.emailAddresses[0].emailAddress,
   });
- 
+
   //TODO: Access the permissions of the user to access the document
 
   return (
