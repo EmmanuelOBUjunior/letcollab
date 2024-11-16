@@ -96,7 +96,7 @@
   }
 
   .document-list-container {
-    @apply flex flex-col items-center mb-10 w- gap-10 px-5 border-2 border-solid border-white;
+    @apply flex flex-col items-center mb-10 w-full gap-10 px-5 border-2 border-solid border-white;
   }
 
   .document-list-title {
