@@ -12,7 +12,8 @@ const UserTypeSelector = ({
   onClickHandler,
 }: UserTypeSelectorParams) => {
   return (
-    <Select>
+
+    <Select value={userType} onValueChange={(type:UserType)=>accessChangeHandler(type)}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
