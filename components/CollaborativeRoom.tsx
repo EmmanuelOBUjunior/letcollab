@@ -27,7 +27,7 @@ const CollaborativeRoom = ({
           <Header className="">
             <div ref ={containerRef} className="flex w-fit items-center justify-center gap-2">
               {editing && !loading ? (
-                <Input type="text" value={documentTitle} />
+                <Input type="text" value={documentTitle} onChange={(e)=> setDocumentTitle(e.target.value)} onKeyDown={updateTitleHandler} />
               ) : (
                 <>
                   <p className="document-title">{documentTitle}</p>
