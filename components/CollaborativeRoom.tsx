@@ -8,11 +8,15 @@ import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import ActiveCollaborators from "./ActiveCollaborators";
 import { useRef, useState } from "react";
 import { Input } from "./ui/input";
+import Image from "next/image";
 
 const CollaborativeRoom = ({
   roomId,
   roomMetadata,
 }: CollaborativeRoomProps) => {
+
+  const currentUserType = 'editor'
+
   const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -46,6 +50,11 @@ const CollaborativeRoom = ({
                 <>
                   <p className="document-title">{documentTitle}</p>
                 </>
+              )}
+              {currentUserType === 'editor' && !editing && (
+                <Image
+                src='/assets/icons/edit.svg'
+                />
               )}
             </div>
             <div className="flex w-fit items-center justify-center gap-2">
