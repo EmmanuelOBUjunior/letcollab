@@ -35,7 +35,9 @@ const CollaborativeRoom = ({
   }, [])
   
 
-  const updateTitleHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
+  const updateTitleHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    
+  };
 
   return (
     <RoomProvider id={roomId}>
