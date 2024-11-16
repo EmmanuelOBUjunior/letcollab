@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { useIsThreadActive } from '@liveblocks/react-lexical'
 import { Composer, Thread } from '@liveblocks/react-ui'
 import { useThreads } from '@liveblocks/react/suspense'
@@ -11,6 +12,7 @@ const ThreadWrapper = ({thread}: ThreadWrapperProps) =>{
         <Thread
         thread={thread}
         data-state = {isActive ? 'active': null}
+        className={cn('comment-thread border'), isActive && 'border-blue-500 shadow-md', thread.resolved && 'opacity-40'}
         />
     )
 }
