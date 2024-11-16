@@ -44,7 +44,7 @@ export const getDocumentUsers = async ({
         const filteredUsers = users.filter((email:string)=>{email.toLowerCase().includes(lowerCaseText)})
         return parseStringify(filteredUsers)
     }
-
+return parseStringify(users)
   } catch (error) {
     console.log("Error fetching document users: ", error);
   }
