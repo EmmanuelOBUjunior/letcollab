@@ -117,6 +117,7 @@ const CollaborativeRoom = ({
                 roomId={roomId}
                 collaborators={users}
                 creatorId={roomMetadata.creatorId}
+                currentUserType = {currentUserType}
               />
               <SignedOut>
                 <SignInButton />
