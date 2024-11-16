@@ -5,9 +5,9 @@ import Loader from "./Loader";
 import { Editor } from "@/components/editor/Editor";
 import Header from "@/components/Header";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
+import ActiveCollaborators from "./ActiveCollaborators";
 
-
-const CollaborativeRoom = ({roomId}: CollaborativeRoomProps) => {
+const CollaborativeRoom = ({ roomId }: CollaborativeRoomProps) => {
   return (
     <RoomProvider id={roomId}>
       <ClientSideSuspense fallback={<Loader />}>
@@ -15,6 +15,9 @@ const CollaborativeRoom = ({roomId}: CollaborativeRoomProps) => {
           <Header>
             <div className="flex w-fit items-center justify-center gap-2">
               <p className="document-title">Document title goes here</p>
+            </div>
+            <div className="flex w-full flex-1 justify-end gap-2 sm:gap-3">
+              <ActiveCollaborators />
             </div>
             <SignedOut>
               <SignInButton />
