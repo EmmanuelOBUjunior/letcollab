@@ -9,7 +9,8 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
-import { liveblocksConfig } from "@liveblocks/react-lexical";
+import { liveblocksConfig, useIsEditorReady } from "@liveblocks/react-lexical";
+import Loader from "../Loader";
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -26,6 +27,8 @@ export function Editor({
   roomId: string;
   currentUserType: UserType;
 }) {
+  const status  = useIsEditorReady()
+
   const initialConfig = liveblocksConfig({
     namespace: "Editor",
     nodes: [HeadingNode],
@@ -43,6 +46,12 @@ export function Editor({
         <div className="toolbar-wrapper flex min-w-full justify-between">
           <ToolbarPlugin />
           {/* {currentUserType === 'editor' && <DeleteModal roomId={roomId}/>} */}
+        </div>
+
+        <div className="editor-warpper flex flex-col items-center justify-start">
+          {!status ? <Loader/> :(
+            <div></div>
+          )}
         </div>
 
         <div className="editor-inner h-[1100px]">
