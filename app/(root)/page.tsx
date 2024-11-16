@@ -6,7 +6,9 @@ const Home = () => {
   return (
     <main className='home-container'>
       <Header className='sticky left-0 top-0'>
-        <Button>Create Blank Document</Button>
+        <div className='flex items-center gap-2 lg:gap-2'>
+          Notifications
+        </div>
       </Header>
     </main>
   )
