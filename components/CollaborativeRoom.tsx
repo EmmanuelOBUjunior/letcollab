@@ -5,10 +5,12 @@ import Loader from "./Loader";
 import { Editor } from "@/components/editor/Editor";
 import Header from "@/components/Header";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
+import { RoomData } from "@liveblocks/node";
 
-const CollaborativeRoom = () => {
+const CollaborativeRoom = ({roomData}: RoomData) => {
+  const {id} = roomData
   return (
-    <RoomProvider id="my-room">
+    <RoomProvider id={id}>
       <ClientSideSuspense fallback={<Loader />}>
         <div className="collaborative-room">
           <Header>
