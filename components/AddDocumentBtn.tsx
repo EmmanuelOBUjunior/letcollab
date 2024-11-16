@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "./ui/button";
 
 const AddDocumentBtn = ({ userId, email }: AddDocumentBtnProps) => {
-  const addDocumentHandler = () => {};
+  const addDocumentHandler = async() => {};
   return (
     <Button
       type="submit"
