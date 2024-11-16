@@ -22,6 +22,8 @@ const Home = () => {
         src='/assets/icons/doc/svg'
         width={40}
         height={40}
+        alt='Document'
+        className='mx-auto'
         />
       </div>)}
       </div>
