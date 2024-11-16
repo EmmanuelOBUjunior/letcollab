@@ -46,4 +46,6 @@ export const getDocumetns = async ({
 
   const hasAccess = Object.keys(room.usersAccesses).includes(userId);
   if (!hasAccess) throw new Error("You do not have access to this document");
+
+  return parseStringify(room)
 };
