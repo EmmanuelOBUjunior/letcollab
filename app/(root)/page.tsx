@@ -26,7 +26,7 @@ const Home = async () => {
       </Header>
       <div>
         {roomDocuments.data.length > 0 ? (
-          <div>
+          <div className="document">
              <div>
               <h3>All Documents</h3>
               <AddDocumentBtn userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
