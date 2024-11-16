@@ -18,6 +18,9 @@ const Collaborator = ({roomId, creatorId, email, collaborator, user}: Collaborat
         height={36}
         className="size-9 rounded-full"
         />
+        <div>
+            <p className="line-clamp-1 text-sm font-semibold leading-4 text-white">{collaborator.name}</p>
+        </div>
       </div>
     </li>
   )
