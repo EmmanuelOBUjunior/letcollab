@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import UserTypeSelector from "./UserTypeSelector";
+import { Button } from "./ui/button";
 
 const Collaborator = ({
   roomId,
@@ -44,7 +45,9 @@ const Collaborator = ({
           <UserTypeSelector
             userType={userType as UserType}
             setUserType={setUserType || "viewer"}
+            onClickHandler={shareDocumentHandler}
           />
+          <Button type="button" onClick={()=>removeCollaboratorHandler(collaborator.email)}>Remove</Button>
         </div>
       )}
     </li>
