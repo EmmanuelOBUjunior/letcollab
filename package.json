@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently next dev node --max-http-header-size=64555 api-server --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
