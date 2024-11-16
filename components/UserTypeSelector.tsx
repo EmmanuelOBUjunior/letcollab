@@ -20,13 +20,12 @@ const UserTypeSelector = ({
       value={userType}
       onValueChange={(type: UserType) => accessChangeHandler(type)}
     >
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Theme" />
+      <SelectTrigger className="shad-select">
+        <SelectValue/>
       </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="light">Light</SelectItem>
-        <SelectItem value="dark">Dark</SelectItem>
-        <SelectItem value="system">System</SelectItem>
+      <SelectContent className="border-none bg-dark-200">
+        <SelectItem value="viewer" className="shad-select-item">can view</SelectItem>
+        <SelectItem value="editor" className="shad-select-item">can edit</SelectItem>
       </SelectContent>
     </Select>
   );
