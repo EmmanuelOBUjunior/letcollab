@@ -66,7 +66,10 @@ const ShareModal = ({
               onChange={(e) => setEmail(e.target.value)}
               className="share-input"
             />
-            <UserTypeSelector userType = {userType} setUserType = {setUserType}/>
+            <UserTypeSelector userType={userType} setUserType={setUserType} />
+            <Button type = 'submit' onClick={shareDocumentHandler} className="gradient-blue flex h-full gap-1 px-5">
+                {loading ? 'Sending...' : 'Invite'}
+            </Button>
           </div>
         </div>
       </DialogContent>
