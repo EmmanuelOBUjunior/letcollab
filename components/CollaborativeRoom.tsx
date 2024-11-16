@@ -23,7 +23,10 @@ const CollaborativeRoom = ({ roomId, roomMetadata}: CollaborativeRoomProps) => {
         <div className="collaborative-room">
           <Header className="">
             <div className="flex w-fit items-center justify-center gap-2">
-              {editing && !loading ? (<Input/>):<>
+              {editing && !loading ? (<Input
+              type="text"
+              value={documentTitle}
+              />):<>
               <p className="document-title">{documentTitle}</p>
               </>}
             </div>
