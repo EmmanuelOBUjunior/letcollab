@@ -15,8 +15,7 @@ const CollaborativeRoom = ({
   roomId,
   roomMetadata,
 }: CollaborativeRoomProps) => {
-
-  const currentUserType = 'editor'
+  const currentUserType = "editor";
 
   const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
   const [editing, setEditing] = useState(false);
@@ -26,33 +25,40 @@ const CollaborativeRoom = ({
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent)=>{
-      if(containerRef.current && !containerRef.current.contains(e.target as Node)) setEditing(false)
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      )
+        setEditing(false);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (editing && inputRef.current) {
+      inputRef.current.focus();
     }
+  }, [editing]);
 
-    document.addEventListener('mousedown', handleClickOutside)
-
-    return ()=> document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
-  useEffect(()=>{
-    if(editing && inputRef.current) inputRef.current.focus()
-  }, [editing])
-  
-
-  const updateTitleHandler = async(e: React.KeyboardEvent<HTMLInputElement>) => {
-    if(e.key === "Enter"){
-      setLoading(true)
+  const updateTitleHandler = async (
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key === "Enter") {
+      setLoading(true);
     }
-    try{
-      if(documentTitle !== roomMetadata.title){
-       const updatedDocument = await updateDocument(roomId, documentTitle)
-       if(updatedDocument) setEditing(false)
+    try {
+      if (documentTitle !== roomMetadata.title) {
+        const updatedDocument = await updateDocument(roomId, documentTitle);
+        if (updatedDocument) setEditing(false);
       }
-    }catch(error){
-      console.log("Could update title: ", error)
+    } catch (error) {
+      console.log("Could update title: ", error);
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   return (
@@ -72,7 +78,7 @@ const CollaborativeRoom = ({
                   ref={inputRef}
                   placeholder="Enter title"
                   onKeyDown={updateTitleHandler}
-                  disabled = {!editing}
+                  disabled={!editing}
                   className="document-title-input"
                 />
               ) : (
@@ -80,17 +86,17 @@ const CollaborativeRoom = ({
                   <p className="document-title">{documentTitle}</p>
                 </>
               )}
-              {currentUserType === 'editor' && !editing && (
+              {currentUserType === "editor" && !editing && (
                 <Image
-                src='/assets/icons/edit.svg'
-                alt="edit"
-                width={24}
-                height={24}
-                className="pointer"
-                onClick={()=> setEditing(true)}
+                  src="/assets/icons/edit.svg"
+                  alt="edit"
+                  width={24}
+                  height={24}
+                  className="pointer"
+                  onClick={() => setEditing(true)}
                 />
               )}
-              {currentUserType !== 'editor' && !editing && (
+              {currentUserType !== "editor" && !editing && (
                 <p className="view-only-tag">View only</p>
               )}
               {loading && <p className="text-sm text-gray-400">saving...</p>}
