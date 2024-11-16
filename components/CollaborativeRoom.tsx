@@ -9,35 +9,39 @@ import ActiveCollaborators from "./ActiveCollaborators";
 import { useRef, useState } from "react";
 import { Input } from "./ui/input";
 
-const CollaborativeRoom = ({ roomId, roomMetadata}: CollaborativeRoomProps) => {
-  const [documentTitle, setDocumentTitle] = useState(roomMetadata.title)
-  const [editing, setEditing] = useState(false)
-  const [loading, setLoading] = useState(false)
+const CollaborativeRoom = ({
+  roomId,
+  roomMetadata,
+}: CollaborativeRoomProps) => {
+  const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
+  const [editing, setEditing] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const containerRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLDivElement>(null);
 
   return (
     <RoomProvider id={roomId}>
       <ClientSideSuspense fallback={<Loader />}>
         <div className="collaborative-room">
           <Header className="">
-            <div className="flex w-fit items-center justify-center gap-2">
-              {editing && !loading ? (<Input
-              type="text"
-              value={documentTitle}
-              />):<>
-              <p className="document-title">{documentTitle}</p>
-              </>}
+            <div ref ={containerRef} className="flex w-fit items-center justify-center gap-2">
+              {editing && !loading ? (
+                <Input type="text" value={documentTitle} />
+              ) : (
+                <>
+                  <p className="document-title">{documentTitle}</p>
+                </>
+              )}
             </div>
             <div className="flex w-fit items-center justify-center gap-2">
               <ActiveCollaborators />
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </div>
           </Header>
           <Editor />
