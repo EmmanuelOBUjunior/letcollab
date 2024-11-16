@@ -4,7 +4,7 @@ import React from 'react'
 const Comments = () => {
     const {threads} = useThreads()
   return (
-    <div>
+    <div className='comments-container'>
       
     </div>
   )
