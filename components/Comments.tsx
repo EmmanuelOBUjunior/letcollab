@@ -9,7 +9,8 @@ const ThreadWrapper = ({thread}: ThreadWrapperProps) =>{
 
     return(
         <Thread
-        
+        thread={thread}
+        data-state = {isActive ? 'active': null}
         />
     )
 }
