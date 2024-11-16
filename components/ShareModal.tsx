@@ -30,7 +30,10 @@ const ShareModal = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
-        <Button className="gradient-blue felx h-9 gap-1 px-4" disabled={currentUserType !== 'editor'}>
+        <Button
+          className="gradient-blue felx h-9 gap-1 px-4"
+          disabled={currentUserType !== "editor"}
+        >
           <Image
             alt="share"
             src="/assets/icons/share.svg"
