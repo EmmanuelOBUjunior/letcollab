@@ -5,9 +5,7 @@ import { clerkClient } from "@clerk/nextjs/server"
 
 export const getClerkUsers = async({userIds}:{userIds: string[]})=>{
     try {
-        const {data} = (await clerkClient()).users.getUserList({
-            emailAddress: userIds
-        })
+        const {data} = await (await clerkClient()).users.getUserList()
 
         const users = data.map((user)=>({
             id: user.id,
