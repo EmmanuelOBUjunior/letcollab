@@ -20,18 +20,26 @@ const CollaborativeRoom = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const updateTitleHandler = (e: KeyboardEvent)=>{
-
-  }
+  const updateTitleHandler = (e: KeyboardEvent) => {};
 
   return (
     <RoomProvider id={roomId}>
       <ClientSideSuspense fallback={<Loader />}>
         <div className="collaborative-room">
           <Header className="">
-            <div ref ={containerRef} className="flex w-fit items-center justify-center gap-2">
+            <div
+              ref={containerRef}
+              className="flex w-fit items-center justify-center gap-2"
+            >
               {editing && !loading ? (
-                <Input type="text" value={documentTitle} onChange={(e)=> setDocumentTitle(e.target.value)} ref={inputRef} placeholder= "Enter title" onKeyDown={updateTitleHandler} />
+                <Input
+                  type="text"
+                  value={documentTitle}
+                  onChange={(e) => setDocumentTitle(e.target.value)}
+                  ref={inputRef}
+                  placeholder="Enter title"
+                  onKeyDown={updateTitleHandler}
+                />
               ) : (
                 <>
                   <p className="document-title">{documentTitle}</p>
