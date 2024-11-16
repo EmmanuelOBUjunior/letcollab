@@ -33,7 +33,7 @@ const Home = async() => {
               alt="Document"
               className="mx-auto"
             />
-            <AddDocumentBtn userId = {clerkUser?.id} email={clerkUser?.emailAddresses[0].emailAddress}/>
+            <AddDocumentBtn userId = {clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
           </div>
         )}
       </div>
