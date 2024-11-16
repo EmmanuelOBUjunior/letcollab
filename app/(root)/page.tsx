@@ -25,8 +25,8 @@ const Home = async () => {
       </Header>
       <div>
         {roomDocuments.data.length > 0 ? (
-          <div className="flex w-full">
-             <div className="flex justify-between">
+          <div className="document-list-container">
+             <div className="document-item">
               <h3 className="text-28-semibold">All Documents</h3>
               <AddDocumentBtn userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
               </div> 
