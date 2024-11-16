@@ -49,8 +49,8 @@ export function Editor({
         </div>
 
         <div className="editor-warpper flex flex-col items-center justify-start">
-          {!status ? <Loader/> :(
-        <div className="editor-inner h-[1100px]">
+          {status ? <Loader/> :(
+        <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px]">
           <RichTextPlugin
             contentEditable={
               <ContentEditable className="editor-input h-full" />
