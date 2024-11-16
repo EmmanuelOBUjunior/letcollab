@@ -11,6 +11,6 @@ export const getClerkUsers = async({userIds}:{userIds: string[]})=>{
         const users = data.
 
     } catch (error) {
-        console.log("Could not get clerkusers", error)
+        console.log("Could not get users", error)
     }
 }
