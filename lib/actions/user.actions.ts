@@ -39,6 +39,10 @@ export const getDocumentUsers = async ({
     const users = Object.keys(room.usersAccesses).filter(
       (email) => email !== currentUser
     );
+    if(text.length){
+        const lowerCaseText = text.toLowerCase()
+    }
+
   } catch (error) {
     console.log("Error fetching document users: ", error);
   }
