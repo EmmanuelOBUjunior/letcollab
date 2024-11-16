@@ -20,7 +20,7 @@ const CollaborativeRoom = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const updateTitleHandler = (e: KeyboardEvent) => {};
+  const updateTitleHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {};
 
   return (
     <RoomProvider id={roomId}>
