@@ -13,6 +13,7 @@ const Document = async ({ params }: SearchParamProps) => {
     roomId: id,
     userId: clerkUser.emailAddresses[0].emailAddress,
   });
+  if(!room) redirect('/')
 
   const userIds = Object.keys(room.usersAccesses);
   const users = await getClerkUsers({ userIds });
