@@ -1,7 +1,7 @@
 
 const ActiveCollaborators = () => {
   return (
-    <ul>
+    <ul className="collaborators-list">
       
     </ul>
   )
