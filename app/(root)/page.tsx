@@ -19,7 +19,7 @@ const Home = () => {
       <div>
       {documents.length > 0 ? (<div></div>):(<div>
         <Image
-        src='/assets/icons/doc/svg'
+        src='/assets/icons/doc.svg'
         width={40}
         height={40}
         alt='Document'
