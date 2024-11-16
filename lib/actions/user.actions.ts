@@ -9,7 +9,9 @@ export const getClerkUsers = async({userIds}:{userIds: string[]})=>{
 
         const users = data.map((user)=>({
             id: user.id,
-            name: `${user.firstName} ${user.lastName}`
+            name: `${user.firstName} ${user.lastName}`,
+            email: user.emailAddresses[0].emailAddress,
+            avatar: user.imageUrl
         }))
 
     } catch (error) {
