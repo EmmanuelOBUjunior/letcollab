@@ -54,7 +54,15 @@ const CollaborativeRoom = ({
               {currentUserType === 'editor' && !editing && (
                 <Image
                 src='/assets/icons/edit.svg'
+                alt="edit"
+                width={24}
+                height={24}
+                className="pointer"
+                onClick={()=> setEditing(true)}
                 />
+              )}
+              {currentUserType !== 'editor' && !editing && (
+                <p className="view-only-tag">View only</p>
               )}
             </div>
             <div className="flex w-fit items-center justify-center gap-2">
