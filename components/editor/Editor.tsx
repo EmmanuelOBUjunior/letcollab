@@ -28,7 +28,7 @@ export function Editor({roomId, currentUserType}: {roomId: string, currentUserTy
       throw error;
     },
     theme: Theme,
-    editable: true
+    editable: currentUserType === 'editor'
   });
 
   return (
