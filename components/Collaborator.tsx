@@ -47,7 +47,12 @@ const Collaborator = ({
             setUserType={setUserType || "viewer"}
             onClickHandler={shareDocumentHandler}
           />
-          <Button type="button" onClick={()=>removeCollaboratorHandler(collaborator.email)}>Remove</Button>
+          <Button
+            type="button"
+            onClick={() => removeCollaboratorHandler(collaborator.email)}
+          >
+            Remove
+          </Button>
         </div>
       )}
     </li>
