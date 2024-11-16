@@ -158,7 +158,7 @@
 
   /* ======================== Home Page */
   .home-container {
-    @apply  flex-col items-center gap-5 sm:gap-10;
+    @apply  relative min-h-screen w-full items-center gap-2 sm:gap-10;
   }
 
   .document-ul {
