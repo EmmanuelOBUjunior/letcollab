@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import UserTypeSelector from "./UserTypeSelector";
 
 const Collaborator = ({
   roomId,
@@ -39,7 +40,12 @@ const Collaborator = ({
       {creatorId === collaborator.id ? (
         <p className="text-sm text-blue-100">Owner</p>
       ) : (
-        <div></div>
+        <div className="flex items-center">
+          <UserTypeSelector
+            userType={userType as UserType}
+            setUserType={setUserType || "viewer"}
+          />
+        </div>
       )}
     </li>
   );
