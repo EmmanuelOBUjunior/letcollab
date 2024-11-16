@@ -10,7 +10,7 @@ import { ReactNode } from "react";
 const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <LiveblocksProvider
-      authEndpoint="/api/liveblock-auth"
+      authEndpoint="/api/liveblocks-auth"
       resolveUsers={async ({ userIds }) => {
         const users = await getClerkUsers({ userIds });
         return users;
