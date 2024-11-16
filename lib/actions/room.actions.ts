@@ -86,6 +86,8 @@ export const updateDocumentAccess = async({roomId, email, userType, updatedBy}:S
       [email]: getAccessType(userType) as AccessType
     }
     const room = await liveblocks.updateRoom(roomId, {usersAccesses})
+    revalidatePath(`/documents/${roomId}`)
+    return parseStringify(room)
   } catch (error) {
     console.log("Error happened while updating a room access", error)
   }
