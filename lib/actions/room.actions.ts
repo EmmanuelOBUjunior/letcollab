@@ -56,8 +56,7 @@ export const getDocument = async ({
 };
 
 export const updateDocument = async ({
-  roomId,
-  title,
+  roomId, title,
 }: {
   roomId: string;
   title: string;

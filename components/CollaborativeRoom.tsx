@@ -42,7 +42,7 @@ const CollaborativeRoom = ({
     }
     try{
       if(documentTitle !== roomMetadata.title){
-       const updatedDocument = await updateDocument()
+       const updatedDocument = await updateDocument(roomId, documentTitle)
       }
     }catch(error){
       console.log("Could update title: ", error)
