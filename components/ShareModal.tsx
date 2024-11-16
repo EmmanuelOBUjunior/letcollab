@@ -9,6 +9,11 @@ const ShareModal = ({roomId, collaborators, creatorId, currentUserType}: ShareDo
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
     const [userType, setUserType] = useState<UserType>('viewer')
+
+    const shareDocumentHandler = async()=>{
+
+    }
+    
   return (
     <div>
       Share Modal
