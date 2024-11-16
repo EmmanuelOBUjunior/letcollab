@@ -1,9 +1,10 @@
+import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 
-const Header = ({children}: HeaderProps) => {
+const Header = ({children, className}: HeaderProps) => {
   return (
-    <div className="header">
+    <div className={cn("header", className)}>
       <Link href='/'>
       <Image
       alt="Logo with name"
