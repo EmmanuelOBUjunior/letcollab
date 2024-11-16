@@ -26,12 +26,12 @@ const Home = async () => {
       <div>
         {roomDocuments.data.length > 0 ? (
           <div className="document-list-container">
-             <div className="document-item">
+             <div className="document-list-title">
               <h3 className="text-28-semibold">All Documents</h3>
               <AddDocumentBtn userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
               </div> 
               <ul className="document-ul">
-                {roomDocuments.data.map(({id, metadata, createdAt})=>(
+                {roomDocuments.data.map(({id, metadata, createdAt}:any)=>(
                   <li key={id} className="document-list-item">
                     <Link href={`/documents/${id}`} className="flex flex-1 items-center gap-4">
                       <div className="hidden rounded-md bg-dark-500 p-2 sm:block">
