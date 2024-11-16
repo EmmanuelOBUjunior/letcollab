@@ -6,7 +6,6 @@ import { SignedIn, UserButton, UserProfile } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import React from "react";
 
 const Home = async () => {
   const clerkUser = await currentUser();
@@ -26,11 +25,14 @@ const Home = async () => {
       </Header>
       <div>
         {roomDocuments.data.length > 0 ? (
-          <div className="document-list-container">
-             <div className="document-list-title">
+          <div className="flex w-full">
+             <div className="flex justify-between">
               <h3 className="text-28-semibold">All Documents</h3>
               <AddDocumentBtn userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
               </div> 
+              <ul className="document-ul">
+
+              </ul>
           </div>
         ) : (
           <div>
