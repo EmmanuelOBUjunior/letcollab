@@ -7,10 +7,9 @@ import Header from "@/components/Header";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 
 
-const CollaborativeRoom = () => {
-  // const {id} = roomData
+const CollaborativeRoom = ({roomId}: CollaborativeRoomProps) => {
   return (
-    <RoomProvider id='room-id'>
+    <RoomProvider id={roomId}>
       <ClientSideSuspense fallback={<Loader />}>
         <div className="collaborative-room">
           <Header>
