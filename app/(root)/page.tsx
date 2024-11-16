@@ -3,9 +3,9 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
+    <main className='home-container'>
       <Button>Click Me</Button>
-    </div>
+    </main>
   )
 }
 
