@@ -15,7 +15,7 @@ const Home = async () => {
   const roomDocuments  = await getDocuments(clerkUser.emailAddresses[0].emailAddress)
 
   return (
-    <main className="">
+    <main className="home-container">
       <Header className="sticky left-0 top-0">
         <div className="flex items-center gap-2 lg:gap-4">
           Notifications
