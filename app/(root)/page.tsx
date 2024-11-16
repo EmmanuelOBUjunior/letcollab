@@ -29,6 +29,7 @@ const Home = async () => {
           <div>
              <div>
               <h3>All Documents</h3>
+              <AddDocumentBtn userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
               </div> 
           </div>
         ) : (
