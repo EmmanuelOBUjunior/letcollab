@@ -39,6 +39,8 @@ const CollaborativeRoom = ({
                   ref={inputRef}
                   placeholder="Enter title"
                   onKeyDown={updateTitleHandler}
+                  disabled = {!editing}
+                  className="document-title-input"
                 />
               ) : (
                 <>
