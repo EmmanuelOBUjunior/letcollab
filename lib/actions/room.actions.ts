@@ -101,3 +101,12 @@ export const updateDocumentAccess = async ({
     console.log("Error happened while updating a room access", error);
   }
 };
+
+
+export const removeCollaborator = async({roomId, email}: {roomId:string, email:string}) =>{
+  try {
+    
+  } catch (error) {
+    console.log("Error happened while trying to remove collaborator:", error)
+  }
+}
