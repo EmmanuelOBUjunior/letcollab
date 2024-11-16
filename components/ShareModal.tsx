@@ -14,6 +14,7 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import UserTypeSelector from "./UserTypeSelector";
 
 const ShareModal = ({
   roomId,
@@ -65,6 +66,7 @@ const ShareModal = ({
               onChange={(e) => setEmail(e.target.value)}
               className="share-input"
             />
+            <UserTypeSelector/>
           </div>
         </div>
       </DialogContent>
