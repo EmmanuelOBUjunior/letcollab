@@ -1,5 +1,5 @@
 
-const UserTypeSelector = () => {
+const UserTypeSelector = ({userType, setUserType, onClickHandler}: UserTypeSelectorParams) => {
   return (
     <div>
       
