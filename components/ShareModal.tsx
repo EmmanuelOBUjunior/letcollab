@@ -66,7 +66,7 @@ const ShareModal = ({
               onChange={(e) => setEmail(e.target.value)}
               className="share-input"
             />
-            <UserTypeSelector/>
+            <UserTypeSelector userType = {userType} setUserType = {setUserType}/>
           </div>
         </div>
       </DialogContent>
