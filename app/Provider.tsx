@@ -15,6 +15,9 @@ const Provider = ({ children }: { children: ReactNode }) => {
         const users = await getClerkUsers({ userIds });
         return users;
       }}
+      resolveMentionSuggestions={async({})=>{
+        // const roomUsers = await getDocumentUsers({})
+      }}
     >
       <ClientSideSuspense fallback={<Loader />}>{children}</ClientSideSuspense>
     </LiveblocksProvider>
