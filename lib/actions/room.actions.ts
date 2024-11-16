@@ -58,8 +58,8 @@ export const getDocument = async ({
 export const updateDocument = async ({
   roomId, title,
 }: {
-  roomId: string;
-  title: string;
+  roomId: string,
+  title: string
 }) => {
   try {
     const updatedRoom = await liveblocks.updateRoom(roomId, {
