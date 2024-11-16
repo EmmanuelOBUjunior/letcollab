@@ -10,12 +10,14 @@ import { useEffect, useRef, useState } from "react";
 import { Input } from "./ui/input";
 import Image from "next/image";
 import { updateDocument } from "@/lib/actions/room.actions";
+import ShareModal from "./ShareModal";
 
 const CollaborativeRoom = ({
   roomId,
-  roomMetadata, users, currentUserType
+  roomMetadata,
+  users,
+  currentUserType,
 }: CollaborativeRoomProps) => {
-
   const [documentTitle, setDocumentTitle] = useState(roomMetadata.title);
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -25,18 +27,21 @@ const CollaborativeRoom = ({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if(containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
         setEditing(false);
         updateDocument(roomId, documentTitle);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [roomId, documentTitle])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [roomId, documentTitle]);
 
   useEffect(() => {
     if (editing && inputRef.current) {
@@ -44,15 +49,17 @@ const CollaborativeRoom = ({
     }
   }, [editing]);
 
-  const updateTitleHandler = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if(e.key === 'Enter') {
+  const updateTitleHandler = async (
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key === "Enter") {
       setLoading(true);
 
       try {
-        if(documentTitle !== roomMetadata.title) {
+        if (documentTitle !== roomMetadata.title) {
           const updatedDocument = await updateDocument(roomId, documentTitle);
-          
-          if(updatedDocument) {
+
+          if (updatedDocument) {
             setEditing(false);
           }
         }
@@ -62,7 +69,7 @@ const CollaborativeRoom = ({
 
       setLoading(false);
     }
-  }
+  };
 
   return (
     <RoomProvider id={roomId}>
@@ -106,6 +113,11 @@ const CollaborativeRoom = ({
             </div>
             <div className="flex w-fit items-center justify-center gap-2">
               <ActiveCollaborators />
+              <ShareModal
+                roomId={roomId}
+                collaborators={users}
+                creatorId={roomMetadata.creatorId}
+              />
               <SignedOut>
                 <SignInButton />
               </SignedOut>
@@ -114,7 +126,7 @@ const CollaborativeRoom = ({
               </SignedIn>
             </div>
           </Header>
-          <Editor roomId={roomId} currentUserType={currentUserType}/>
+          <Editor roomId={roomId} currentUserType={currentUserType} />
         </div>
       </ClientSideSuspense>
     </RoomProvider>
