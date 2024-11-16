@@ -1,6 +1,6 @@
 import AddDocumentBtn from "@/components/AddDocumentBtn";
 import Header from "@/components/Header";
-import { Button } from "@/components/ui/button";
+
 import { getDocuments } from "@/lib/actions/room.actions";
 import { SignedIn, UserButton, UserProfile } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
