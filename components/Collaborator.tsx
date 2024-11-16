@@ -15,3 +15,4 @@ const Collaborator = ({roomId, creatorId, email, collaborator, user}: Collaborat
 }
 
 export default Collaborator
+  
