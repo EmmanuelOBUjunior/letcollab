@@ -10,11 +10,13 @@ import { ReactNode } from "react";
 const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <LiveblocksProvider
-      resolveUsers={async ({ userIds }) => {
+      authEndpoint={"/api/liveblock-auth"}
+      resolveUsers={
+        async ({ userIds }) => {
         const users = await getClerkUsers({ userIds });
         return users;
       }}
-      authEndpoint={"/api/liveblock-auth"}
+      
     >
       <ClientSideSuspense fallback={<Loader />}>{children}</ClientSideSuspense>
     </LiveblocksProvider>
