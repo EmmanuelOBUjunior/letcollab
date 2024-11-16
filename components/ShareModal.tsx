@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShareModal = () => {
+const ShareModal = ({roomId, collaborators, creatorId, currentUserType}: ShareDocumentDialogProps) => {
   return (
     <div>
       Share Modal
