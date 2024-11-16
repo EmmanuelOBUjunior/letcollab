@@ -35,7 +35,7 @@ export const createDocument = async ({
   }
 };
 
-export const getDocumetns = async ({
+export const getDocuments = async ({
   roomId,
   userId,
 }: {
