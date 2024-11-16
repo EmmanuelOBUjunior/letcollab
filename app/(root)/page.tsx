@@ -4,6 +4,7 @@ import { SignedIn, UserButton, UserProfile } from '@clerk/nextjs'
 import React from 'react'
 
 const Home = () => {
+  const documents = []
   return (
     <main className='home-container'>
       <Header className='sticky left-0 top-0'>
@@ -14,6 +15,9 @@ const Home = () => {
           </SignedIn>
         </div>
       </Header>
+      <div>
+
+      </div>
     </main>
   )
 }
