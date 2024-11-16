@@ -9,7 +9,7 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
-import { liveblocksConfig, useIsEditorReady } from "@liveblocks/react-lexical";
+import { liveblocksConfig, LiveblocksPlugin, useIsEditorReady } from "@liveblocks/react-lexical";
 import Loader from "../Loader";
 import FloatingToolbarPlugin from './plugins/FloatingToolbarPlugin'
 // Catch any errors that occur during Lexical updates and log them
@@ -49,7 +49,7 @@ export function Editor({
         </div>
 
         <div className="editor-warpper flex flex-col items-center justify-start">
-          {status ? <Loader/> :(
+          {!status ? <Loader/> :(
         <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px]">
           <RichTextPlugin
             contentEditable={
@@ -63,6 +63,11 @@ export function Editor({
           <AutoFocusPlugin />
         </div>
           )}
+
+          <LiveblocksPlugin>
+
+          </LiveblocksPlugin>
+
         </div>
 
       </div>
