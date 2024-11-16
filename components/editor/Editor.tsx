@@ -11,7 +11,7 @@ import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { LexicalErrorBoundary } from "@lexical/react/LexicalErrorBoundary";
 import { liveblocksConfig, useIsEditorReady } from "@liveblocks/react-lexical";
 import Loader from "../Loader";
-
+import FloatingToolbarPlugin from './plugins/FloatingToolbarPlugin'
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
 // try to recover gracefully without losing user data.
