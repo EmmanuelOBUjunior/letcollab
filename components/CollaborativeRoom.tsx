@@ -34,6 +34,10 @@ const CollaborativeRoom = ({
 
     return ()=> document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  useEffect(()=>{
+    if(editing && inputRef.current) inputRef.current.focus()
+  }, [editing])
   
 
   const updateTitleHandler = async(e: React.KeyboardEvent<HTMLInputElement>) => {
