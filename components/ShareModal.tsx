@@ -31,7 +31,14 @@ const ShareModal = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
         <Button>
-            <Image alt= 'share' src='/assets/icons/share.svg' width={20} height={20}/>
+          <Image
+            alt="share"
+            src="/assets/icons/share.svg"
+            width={20}
+            height={20}
+            className="min-w-4 md:size-5"
+          />
+          <p className="mr-1 hidden sm:block">Share</p>
         </Button>
       </DialogTrigger>
       <DialogContent>
