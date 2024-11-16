@@ -7,9 +7,9 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
 
-const Home = async() => {
-  const clerkUser = await currentUser()
-  if(!clerkUser) redirect('/sign-in')
+const Home = async () => {
+  const clerkUser = await currentUser();
+  if (!clerkUser) redirect("/sign-in");
   const documents = [];
   return (
     <main className="home-container">
@@ -33,7 +33,10 @@ const Home = async() => {
               alt="Document"
               className="mx-auto"
             />
-            <AddDocumentBtn userId = {clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
+            <AddDocumentBtn
+              userId={clerkUser.id}
+              email={clerkUser.emailAddresses[0].emailAddress}
+            />
           </div>
         )}
       </div>
