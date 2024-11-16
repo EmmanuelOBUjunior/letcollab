@@ -15,6 +15,7 @@ import Image from "next/image";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import UserTypeSelector from "./UserTypeSelector";
+import Collaborator from "./Collaborator";
 
 const ShareModal = ({
   roomId,
