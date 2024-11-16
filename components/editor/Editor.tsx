@@ -50,10 +50,6 @@ export function Editor({
 
         <div className="editor-warpper flex flex-col items-center justify-start">
           {!status ? <Loader/> :(
-            <div></div>
-          )}
-        </div>
-
         <div className="editor-inner h-[1100px]">
           <RichTextPlugin
             contentEditable={
@@ -65,6 +61,9 @@ export function Editor({
           <HistoryPlugin />
           <AutoFocusPlugin />
         </div>
+          )}
+        </div>
+
       </div>
     </LexicalComposer>
   );
