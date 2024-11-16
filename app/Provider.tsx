@@ -5,6 +5,7 @@ import {
   ClientSideSuspense,
 } from "@liveblocks/react/suspense";
 import { ReactNode } from "react";
+
 const Provider = ({ children }: { children: ReactNode }) => {
   return (
     <LiveblocksProvider authEndpoint={"/api/liveblock-auth"}>
