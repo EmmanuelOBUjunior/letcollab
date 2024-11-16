@@ -1,7 +1,7 @@
 import AddDocumentBtn from "@/components/AddDocumentBtn";
 import Header from "@/components/Header";
 import { getDocuments } from "@/lib/actions/room.actions";
-import { SignedIn, UserButton, UserProfile } from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
