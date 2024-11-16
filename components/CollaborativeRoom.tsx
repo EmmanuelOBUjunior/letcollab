@@ -26,7 +26,7 @@ const CollaborativeRoom = ({ roomId, roomMetadata}: CollaborativeRoomProps) => {
               <UserButton />
             </SignedIn>
           </Header>
-          <Editor />
+          {/* <Editor /> */}
         </div>
       </ClientSideSuspense>
     </RoomProvider>
