@@ -8,7 +8,7 @@ const AddDocumentBtn = ({ userId, email }: AddDocumentBtnProps) => {
 
     }
   return (
-    <Button type="submit" onClick={addDocumentHandler} className="gradient-blue">
+    <Button type="submit" onClick={addDocumentHandler} className="gradient-blue flex gap-1 shadow-md">
       <Image
         src="/assets/icons/add.svg"
         alt="Add document"
