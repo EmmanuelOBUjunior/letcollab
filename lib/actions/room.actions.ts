@@ -12,13 +12,13 @@ export const createDocument = async({userId, email}: CreateDocumentParams) =>{
             title: 'Untitled'
         }
 
-        const userAccesses : RoomAccesses = {
+        const usersAccesses : RoomAccesses = {
             [email]: 'room:write'
         }
 
         const room = await liveblocks.createRoom(roomId, {
-            metadata
-            usersAccesses
+            metadata,
+            usersAccesses,
             defaultAccesses: [],
           });
 
