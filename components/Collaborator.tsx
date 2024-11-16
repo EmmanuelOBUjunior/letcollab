@@ -22,7 +22,7 @@ const Collaborator = ({
         <Image
           src={collaborator.avatar}
           alt={collaborator.name}
-          width={36}
+          width={36} 
           height={36}
           className="size-9 rounded-full"
         />
