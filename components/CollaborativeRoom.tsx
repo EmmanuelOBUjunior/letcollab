@@ -24,22 +24,20 @@ const CollaborativeRoom = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
+  seEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      )
+      if(containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setEditing(false);
-        updateDocument(roomId, documentTitle)
-    };
+        updateDocument(roomId, documentTitle);
+      }
+    }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [roomId, documentTitle])
 
   useEffect(() => {
     if (editing && inputRef.current) {
