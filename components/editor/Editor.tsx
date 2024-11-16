@@ -58,7 +58,7 @@ export function Editor({
             placeholder={<Placeholder />}
             ErrorBoundary={LexicalErrorBoundary}
           />
-          {currentUserType === 'editor' && <FloatingToolbar/>}
+          {currentUserType === 'editor' && <FloatingToolbarPlugin/>}
           <HistoryPlugin />
           <AutoFocusPlugin />
         </div>
