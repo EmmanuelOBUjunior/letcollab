@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import { Button } from '@/components/ui/button'
 import { SignedIn, UserButton, UserProfile } from '@clerk/nextjs'
+import Image from 'next/image'
 import React from 'react'
 
 const Home = () => {
@@ -16,7 +17,11 @@ const Home = () => {
         </div>
       </Header>
       <div>
-
+      {documents.length > 0 ? (<div></div>):(<div>
+        <Image
+        src='/assets/icons/doc/svg'
+        />
+      </div>)}
       </div>
     </main>
   )
