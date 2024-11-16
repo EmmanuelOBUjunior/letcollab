@@ -15,7 +15,7 @@ const Home = async () => {
   const roomDocuments  = await getDocuments(clerkUser.emailAddresses[0].emailAddress)
 
   return (
-    <main className="home-container">
+    <main className="">
       <Header className="sticky left-0 top-0">
         <div className="flex items-center gap-2 lg:gap-4">
           Notifications
@@ -27,7 +27,7 @@ const Home = async () => {
       <div>
         {roomDocuments.data.length > 0 ? (
           <div className="document-list-container">
-             <div className="document-list-title">
+             <div className="max-w-[730px] flex w-full justify-between">
               <h3 className="text-28-semibold">All Documents</h3>
               <AddDocumentBtn userId={clerkUser.id} email={clerkUser.emailAddresses[0].emailAddress}/>
               </div> 
