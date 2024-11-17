@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-// import { deleteDocument } from "@/lib/actions/room.actions";
+import { deleteDocument } from "@/lib/actions/room.actions";
 
 import {
   Dialog,
@@ -26,7 +26,7 @@ const DeleteModal = ({ roomId }: DeleteModalProps) => {
     setLoading(true);
 
     try {
-    //   await deleteDocument(roomId);
+      await deleteDocument(roomId);
       setOpen(false);
     } catch (error) {
       console.log("Error notif:", error);
