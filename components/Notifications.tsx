@@ -24,7 +24,7 @@ const Notifications = () => {
         height={24}
         alt="inbox"
         />
-        {count > 0 && (<div className="absolute right-2 top-2 z-20 size-2 rounded-full bg-blue-500"/>)}
+        {count > 0 && (<div className="absolute right-2 top-2 z-20 size-3 rounded-full bg-red-500"/>)}
       </PopoverTrigger>
       <PopoverContent>Place content for the popover here.</PopoverContent>
     </Popover>
