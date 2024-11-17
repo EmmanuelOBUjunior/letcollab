@@ -4,9 +4,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useInboxNotifications } from "@liveblocks/react/suspense";
 import Image from "next/image";
 
 const Notifications = () => {
+    const {notificationCount} = useInboxNotifications()
   return (
     <Popover>
       <PopoverTrigger className="relative flex size-10 items-center justify-center rounded-lg">
