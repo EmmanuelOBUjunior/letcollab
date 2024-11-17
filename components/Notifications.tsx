@@ -38,8 +38,9 @@ const Notifications = () => {
             inboxNotification={notification}
             className="bg-dark-200 text-white"
             href={`/documents/${notification.roomId}`}
+            showActions= {false}
             kinds={{
-                
+
             }}
             />))}
         </InboxNotificationList>
