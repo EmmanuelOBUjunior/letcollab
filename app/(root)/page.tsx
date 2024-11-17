@@ -44,7 +44,7 @@ const Home = async () => {
                         <p className="text-sm font-light text-blue-100">Created about {dateConverter(createdAt)}</p>
                       </div>
                     </Link>
-                    <DeleteModal/>
+                    <DeleteModal roomId = {id}/>
                   </li>
                 ))}
               </ul>
