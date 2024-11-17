@@ -105,7 +105,8 @@ export const updateDocumentAccess = async ({
           updatedBy: updatedBy.name,
           avatar: updatedBy.avatar,
           email: updatedBy.email,
-        }
+        },
+        roomId
       })
     }
 
