@@ -9,7 +9,7 @@ import Image from "next/image";
 const Notifications = () => {
   return (
     <Popover>
-      <PopoverTrigger>
+      <PopoverTrigger className="relative flex size-10 items-center justify-center rounded-lg">
         <Image
         src='/assets/icons/bell.svg'
         width={24}
