@@ -134,6 +134,6 @@ export const deleteDocument = async (roomId: string) => {
     revalidatePath('/')
     redirect('/')
   } catch (error) {
-
+      console.log('Error happened while deleting a room: ', error)
   }
 };
