@@ -46,7 +46,7 @@ const Notifications = () => {
           }}
         >
           <InboxNotificationList>
-            {unreadNotifications.length < 0 && (
+            {unreadNotifications.length <= 0 && (
               <p className="py-2 text-center text-dark-500">
                 No new notifications
               </p>
