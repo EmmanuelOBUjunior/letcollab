@@ -18,8 +18,8 @@ import { ReactNode } from "react";
 
 const Notifications = () => {
   const { inboxNotifications } = useInboxNotifications();
-  const {count} = useUnreadInboxNotificationsCount()
-//   let count = 3;
+  const { count } = useUnreadInboxNotificationsCount();
+  //   let count = 3;
   const unreadNotifications = inboxNotifications.filter(
     (notification) => !notification.readAt
   );
@@ -41,7 +41,7 @@ const Notifications = () => {
         <LiveblocksUIConfig
           overrides={{
             INBOX_NOTIFICATION_TEXT_MENTION: (user: ReactNode) => {
-              return <>{user} mentioened you.</>
+              return <>{user} mentioened you.</>;
             },
           }}
         >
