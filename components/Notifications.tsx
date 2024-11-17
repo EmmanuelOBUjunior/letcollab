@@ -2,7 +2,7 @@
 const Notifications = () => {
   return (
     <div>
-      Notifications
+      Notification
     </div>
   )
 }
