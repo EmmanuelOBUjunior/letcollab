@@ -74,10 +74,27 @@ const Notifications = () => {
                       />
                     ),
                     $documentAccess: (props) => (
-                        <InboxNotification.Custom {...props} title={props.inboxNotification.activities[0].data.title} aside={<InboxNotification.Icon className="bg-transparent"><Image src={props.inboxNotification.activities[0].data.avatar as string || ''} alt="avatar" width={36} height={36} className="rounded-full"/></InboxNotification.Icon>}>
-                            {props.children}
-                        </InboxNotification.Custom>
-                    )
+                      <InboxNotification.Custom
+                        {...props}
+                        title={props.inboxNotification.activities[0].data.title}
+                        aside={
+                          <InboxNotification.Icon className="bg-transparent">
+                            <Image
+                              src={
+                                (props.inboxNotification.activities[0].data
+                                  .avatar as string) || ""
+                              }
+                              alt="avatar"
+                              width={36}
+                              height={36}
+                              className="rounded-full"
+                            />
+                          </InboxNotification.Icon>
+                        }
+                      >
+                        {props.children}
+                      </InboxNotification.Custom>
+                    ),
                   }}
                 />
               ))}
