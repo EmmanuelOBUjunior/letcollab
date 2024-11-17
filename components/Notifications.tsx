@@ -11,7 +11,7 @@ const Notifications = () => {
 
     const {inboxNotifications} = useInboxNotifications()
     // const {count} = useUnreadInboxNotificationsCount()
-    const count = 3
+    let count = 3
     const unreadNotifications = inboxNotifications.filter((notification)=> !notification.readAt)
 
 
