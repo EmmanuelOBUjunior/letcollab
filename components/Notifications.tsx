@@ -40,9 +40,9 @@ const Notifications = () => {
       <PopoverContent align="end" className="shad-popover">
         <LiveblocksUIConfig
           overrides={{
-            INBOX_NOTIFICATION_TEXT_MENTION: (user: ReactNode) => (
-              <>{user} mentioened you.</>
-            ),
+            INBOX_NOTIFICATION_TEXT_MENTION: (user: ReactNode) => {
+              return <>{user} mentioened you.</>
+            },
           }}
         >
           <InboxNotificationList>
