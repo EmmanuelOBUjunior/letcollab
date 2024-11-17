@@ -4,7 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { LiveblocksUIConfig } from "@liveblocks/react-ui";
+import { InboxNotificationList, LiveblocksUIConfig } from "@liveblocks/react-ui";
 import { useInboxNotifications, useUnreadInboxNotificationsCount } from "@liveblocks/react/suspense";
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -31,7 +31,9 @@ const Notifications = () => {
       <PopoverContent align="end" className="shad-popover">
         <LiveblocksUIConfig overrides={{INBOX_NOTIFICATION_TEXT_MENTION: (user:ReactNode)=>(<>{user} mentioened you.</>)}}>
         
-        
+        <InboxNotificationList>
+            {unreadNotifications.length < 0 && (<p className="py-2 text-center text-dark-500">No new notifications</p>)}
+        </InboxNotificationList>
         
         </LiveblocksUIConfig>
       </PopoverContent>
